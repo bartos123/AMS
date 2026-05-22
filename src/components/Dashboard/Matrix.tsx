@@ -13,7 +13,7 @@ const Matrix = ({assets, onHoverChange}: { assets: { symbol: string; percentage:
     
 
     return (
-        <div className="w-full border-l-4 border-black bg-white overflow-hidden">
+        <div className="w-full border-black bg-white overflow-hidden">
             <svg
                 viewBox = {`0 0 ${width} ${height}`}
                 className="w-full h-auto">
