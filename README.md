@@ -35,8 +35,7 @@ The codebase is strictly modularized, separating volatile state logic (custom ho
   <tr>
     <td width="33.3%"><img src="https://github.com/user-attachments/assets/ee557999-324c-48b8-9181-4a738fc50edb" width="100%" /></td>
     <td width="33.3%"><img src="https://github.com/user-attachments/assets/1304de0e-5b95-4160-893f-c567c2f01fa5" width="100%" /></td>
-    <img width="1877" height="1087" alt="obrazek" src="https://github.com/user-attachments/assets/1ddf392e-8c1f-495c-9912-8a6d5cd0387a" />
-    <td width="33.3%"></td> </tr>
+    <td width="33.3%"> <img src="https://github.com/user-attachments/assets/1ddf392e-8c1f-495c-9912-8a6d5cd0387a" ></td>
 </table>
 
 ## RESILIENCE ENGINEERING
