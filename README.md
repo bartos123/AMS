@@ -19,7 +19,7 @@ The codebase is strictly modularized, separating volatile state logic (custom ho
 - `usePortfolio.ts`: Orchestrates the global application state, handling defensive `localStorage` cache hydration with type-filtering safeguards. Features an asynchronous Finnhub pipeline with explicit HTTP 429 rate-limit logging and invalid symbol alerts. Manages real-time memoized financial statistics (`stats`) and a share-scaling controller that mathematically recalculates weighted Dollar-Cost Averaging (DCA) buy prices using strict `isFinite` and `isNaN` runtime blocks.
 - `useNews.ts`: Controls the asynchronous news cycle, isolating data fetch layers to maintain application uptime during third-party service degradation.
 
-### 2. DATAVISUALIZATION & ABSTRACTION (`/components`)
+### 2. DATA VISUALIZATION & ABSTRACTION (`/components`)
 - `Dashboard.tsx` & `Matrix.tsx`: Rather than rendering raw lists, the analytical engine handles asset allocation weightings using a custom Long-Tail filter. It computes a specific percentage threshold (5%), automatically compressing low-exposure assets into a singular aggregated layout component (`+`) to preserve visual data density.
 
 ### 3. THE POSTER EXPERIMENTS (`/components/UI/Poster/variations`)
