@@ -69,10 +69,10 @@ const Dashboard = ({
 
         {/* LEGENDA*/}
         <div className="py-4 pl-4 font-mono text-[12px] uppercase tracking-[0.2em] text-black bg-white border-t border-black/10">
-          <div className="flex gap-6">
-            <div className="flex flex-col">
+          <div className="flex gap-6 flex-wrap">
+            <div className="flex flex-col" min-w-0 flex-1>
               <span className="opacity-50 text-[10px] mb-1">Active Asset</span>
-              <span className="font-bold">
+              <span className="font-bold whitespace-normal break-words leading-relaxed">
                 {hovered ? (
                   hovered === '+' ? (
                     <span>
