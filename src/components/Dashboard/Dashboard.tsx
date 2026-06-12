@@ -37,7 +37,7 @@ const Dashboard = ({
   return (
     <div className="col-span-full grid grid-cols-1 lg:grid-cols-4 border-2 border-black bg-black gap-0.5 mb-12">
       
-      {/* LEVÝ PANEL */}
+      {/* LEFT */}
       <div className="p-8 flex flex-col justify-center bg-white">
         <div className="text-[10px] font-black uppercase tracking-[0.4em] text-black/40 mb-2">
           Portfolio Capital
@@ -55,11 +55,10 @@ const Dashboard = ({
         </div>
       </div>
         
-      {/* PRAVÝ PANEL: MATRIX */}
+      {/* RIGHT */}
       <div className="lg:col-span-3 flex flex-col bg-black gap-0.5">
         <div className="flex-1 bg-white">
           {watchlist.length > 0 ? (
-            /* FIX: Místo surových matrixData posíláme do mřížky zpracovaná a sloučená data */
             <Matrix assets={processedMatrixData} onHoverChange={setHovered} />
           ) : (
             <div className="h-full flex items-center justify-center p-20 text-black/20 font-black uppercase tracking-widest">
@@ -68,7 +67,7 @@ const Dashboard = ({
           )}
         </div>
 
-        {/* LEGENDA POD MATRIXEM */}
+        {/* LEGENDA*/}
         <div className="py-4 pl-4 font-mono text-[12px] uppercase tracking-[0.2em] text-black bg-white border-t border-black/10">
           <div className="flex gap-6">
             <div className="flex flex-col">
@@ -76,7 +75,7 @@ const Dashboard = ({
               <span className="font-bold">
                 {hovered ? (
                   hovered === '+' ? (
-                    <span className="text-red-600">
+                    <span>
                       Diversified Others: {chart.filter(a => a.percentage < 5).map(a => `${a.symbol} (${a.percentage.toFixed(1)}%)`).join(', ')}
                     </span>
                   ) : hovered

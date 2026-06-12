@@ -67,7 +67,7 @@ export const NewsFeed = ({ news, watchlist = [], isOffline, isError }: NewsFeedP
       <div className="flex-1 overflow-y-auto custom-scrollbar border-x-2 border-black">
         {filteredNews.length === 0 ? (
           <div className="p-20 text-center italic opacity-20 uppercase font-black tracking-widest text-2xl">
-            — No_specific_intel_found —
+            — Nothing Found —
           </div>
         ) : (
           <div className="divide-y-2 divide-black border-b-2 border-black">
@@ -77,7 +77,7 @@ export const NewsFeed = ({ news, watchlist = [], isOffline, isError }: NewsFeedP
                 href={n.url} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="flex flex-col md:flex-row md:items-center justify-between p-8 bg-white hover:bg-black group transition-all duration-200"
+                className="flex flex-col md:flex-row md:items-center justify-between p-8 bg-white hover:bg-black group"
               >
                 <div className="flex flex-col gap-3 flex-1">
                   <div className="flex items-center gap-4">
@@ -102,7 +102,7 @@ export const NewsFeed = ({ news, watchlist = [], isOffline, isError }: NewsFeedP
                 
                 <div className="flex items-center mt-6 md:mt-0">
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 group-hover:text-white transition-opacity whitespace-nowrap">
-                    READ_FULL_STORY [+]
+                    READ [+]
                   </span>
                 </div>
               </a>
@@ -111,7 +111,7 @@ export const NewsFeed = ({ news, watchlist = [], isOffline, isError }: NewsFeedP
         )}
         <div className="p-12 text-center">
           <p className="text-[10px] font-black uppercase tracking-[0.5em] opacity-10">
-            End of Intelligence Stream // {filteredNews.length} Reports
+            {filteredNews.length} Reports
           </p>
         </div>
       </div>
