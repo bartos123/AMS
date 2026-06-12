@@ -40,39 +40,42 @@ const Matrix = ({assets, onHoverChange}: { assets: { symbol: string; percentage:
                         currentH -= h;
                     }
 
+                    
                     const isHovered = hovered === asset.symbol;
+                    const minDimension = Math.min(w, h);
+                    const showSymbol = minDimension > 15; 
+                    const showPercentage = minDimension > 30;
                     return (
-                        <g key={asset.symbol}
-                            onMouseEnter={() => {setHovered(asset.symbol); onHoverChange(asset.symbol)}}
-                            onMouseLeave={() => {setHovered(null); onHoverChange(null)}} 
-                     >
+                    <g key={asset.symbol}
+                        onMouseEnter={() => {setHovered(asset.symbol); onHoverChange(asset.symbol)}}
+                        onMouseLeave={() => {setHovered(null); onHoverChange(null)}} 
+                    >
                         <rect x={x} y={y} width={w} height={h} fill={isHovered ? 'black' : 'white'} stroke="black" strokeWidth="0.5" />
-                            <text
-                            x={x + w/2} y={y + h/2}
+                        {showSymbol && (
+                        <text
+                            x={x + w/2} y={y + (showPercentage ? h/2 - 4 : h/2)} 
                             textAnchor="middle"
                             dominantBaseline="middle"
                             fill={isHovered ? 'white' : 'black'}
-                            className="font-black text-4xl uppercase tracking-tighter"
-                            style={{ fontSize: Math.min(w, h) * 0.3 }} 
-                            >
+                            className="font-black uppercase tracking-tighter"
+                            style={{ fontSize: Math.max(10, minDimension * 0.3) }}
+                        >
                             {asset.symbol}
-                            </text>
-                        
+                        </text>
+                        )}
 
-
-
-
-                            <text
-                            x={x + w/2} y={y + h/2 + (Math.min(w, h) * 0.3 * 0.45) + 8}
+                        {showPercentage && (
+                        <text
+                            x={x + w/2} y={y + h/2 + (minDimension * 0.3 * 0.45) + 6}
                             textAnchor="middle"
                             fill={isHovered ? 'white' : 'black'}
                             dominantBaseline="middle"
-                            className="font-bold text-[10px] uppercase tracking-[0.2em] opacity-50"
-                            >
+                            className="font-bold text-[9px] uppercase tracking-[0.2em] opacity-50"
+                        >
                             {asset.percentage.toFixed(1)}%
-                            </text>
-                        
-                        </g>
+                        </text>
+                        )}
+                    </g>
                     );
                     })}
                 </svg>
